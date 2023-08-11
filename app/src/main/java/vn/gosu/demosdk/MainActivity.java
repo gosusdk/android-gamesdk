@@ -139,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         mGosu.showLogin(new DialogLoginID.OnLoginListener() {
+                            @Override
                             public void onLoginSuccessful(String UserId, String UserName, String accesstoken) {
                                 tv_UID.setText("UserName: " + UserName);
                                 btnVaoGame.setVisibility(View.GONE);
