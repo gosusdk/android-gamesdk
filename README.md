@@ -200,21 +200,6 @@ public void call_billing()
 
 USAGE NEMO TRACKING SDK
 --------------------
-To utilize a feature listed above include the appropriate listed below in your `AdroidManifest.xml` file.
-```xml
-<application android:supportsRtl="true">
- <receiver android:name="com.appsflyer.MultipleInstallBroadcastReceiver" android:exported="true" >
-    <intent-filter>
-      <action android:name="com.android.vending.INSTALL_REFERRER" />
-    </intent-filter>
- </receiver>
- <receiver android:name="com.appsflyer.SingleInstallBroadcastReceiver" android:exported="true" >
-  <intent-filter>
-	<action android:name="com.android.vending.INSTALL_REFERRER" />
-  </intent-filter>
- </receiver>
-</application>
-```
 
 ```java
 //Initialize SDK 
