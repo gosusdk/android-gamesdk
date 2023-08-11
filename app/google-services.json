@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "988293839791",
+    "project_id": "ngtt-db182",
+    "storage_bucket": "ngtt-db182.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:988293839791:android:bb1007de9c14734759cd5a",
+        "android_client_info": {
+          "package_name": "vn.gosu.atomarena"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "988293839791-lo1mdbu7rva4seuhep8lhj38tctjl1ha.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCK8Tb7bANepZWgfNCwlkIxeCsL4tqJJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "988293839791-lo1mdbu7rva4seuhep8lhj38tctjl1ha.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "988293839791-7gr3td92k19qu1vua86rhb5tbp57tjai.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.ngtt.gg"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

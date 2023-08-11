@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- pressed -->
+    <item android:state_pressed="true"><shape>
+        <gradient android:angle="270" android:endColor="@color/gray" android:startColor="@color/gray" />
+        <corners android:radius="4dp" />
+        </shape></item>
+    <!-- focused -->
+    <item android:state_focused="true"><shape>
+        <gradient android:angle="270" android:endColor="@color/gray" android:startColor="@color/gray" />
+        <corners android:radius="4dp" />
+        </shape></item>
+    <!-- default -->
+    <item><shape>
+            <gradient android:angle="270" android:endColor="@color/yellow" android:startColor="@color/yellow" />
+            <corners android:radius="4dp" />
+        </shape></item>
+
+</selector>

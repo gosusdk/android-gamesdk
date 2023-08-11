@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Gosu SDK Demo</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+
+    <string name="vaogame">Play Game</string>
+	<string name="facebook_app_id">1040732623310973</string>
+    <string name="facebook_app_scheme">fb717886485019785</string>
+    <string name="facebook_client_token">fc596c5dc32bf9a07eba748e14c76176</string>
+
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+</resources>
