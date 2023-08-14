@@ -58,7 +58,7 @@ app/
   google-service.json
 ```
 
-**- Add gosu_service.json file to folder main/assets**
+**- Add gosu-service.json file to folder main/assets**
 ```json
 {
   "client_id": "",
