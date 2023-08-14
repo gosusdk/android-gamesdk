@@ -55,7 +55,7 @@ dependencies {
 **-Move config file (google-services.json) into the module (app-level) root directory of your app.**
 ```
 app/
-  google-service.json
+  google-services.json
 ```
 
 **- Add gosu-service.json file to folder main/assets**
