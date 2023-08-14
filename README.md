@@ -116,7 +116,7 @@ app/
 ```
 USAGE GOSU LOGIN SDK
 --------------------
-1. Initialize configuration for NemoSDK
+1. Initialize configuration for GosuSDK
 ---
 ```java
   protected void onCreate(Bundle savedInstanceState)()
@@ -198,7 +198,7 @@ public void call_billing()
 }
 ```
 
-USAGE NEMO TRACKING SDK
+USAGE GOSU TRACKING SDK
 --------------------
 
 ```java
