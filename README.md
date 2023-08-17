@@ -7,6 +7,8 @@ FEATURES *version: 1.2.6*
 * Billing
 * Tracking
 
+**Download the official version: [click here](https://github.com/gosusdk/android-gamesdk/releases)**
+
 INSTALLATION
 ------------
 
