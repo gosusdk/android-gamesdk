@@ -133,9 +133,9 @@ USAGE GOSU LOGIN SDK
         if (requestCode == GosuSDKConstant.IAP_RQ_CODE) {
             super.onActivityResult(requestCode, resultCode, data);
         } else if(requestCode == GosuSDKConstant.FLOATING_RQ_CODE){
-            mGosu.checkResultForFloatingView(requestCode, resultCode, data);
+            Gosu.getSharedInstance().checkResultForFloatingView(requestCode, resultCode, data);
         } else {
-            mGosu.onActivityResult(requestCode, resultCode, data);
+            Gosu.getSharedInstance().onActivityResult(requestCode, resultCode, data);
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
