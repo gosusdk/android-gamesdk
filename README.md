@@ -121,13 +121,24 @@ USAGE GOSU LOGIN SDK
 1. Initialize configuration for GosuSDK
 ---
 ```java
-  protected void onCreate(Bundle savedInstanceState)()
-  {
-    // ...
-    //Initialize SDK
-    Gosu.getSharedInstance().initialize( this);
-    Gosu.getSharedInstance().showFloating18Plus(this); //optional
-  }
+    protected void onCreate(Bundle savedInstanceState)()
+    {
+        // ...
+        //Initialize SDK
+        Gosu.getSharedInstance().initialize( this);
+        Gosu.getSharedInstance().showFloating18Plus(this); //optional
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == GosuSDKConstant.IAP_RQ_CODE) {
+            super.onActivityResult(requestCode, resultCode, data);
+        } else if(requestCode == GosuSDKConstant.FLOATING_RQ_CODE){
+            mGosu.checkResultForFloatingView(requestCode, resultCode, data);
+        } else {
+            mGosu.onActivityResult(requestCode, resultCode, data);
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 ```
 **NOTE**
 * Login with Google: You send SHA-1 us [click here](https://developers.google.com/android/guides/client-auth)
