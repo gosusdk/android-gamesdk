@@ -1,7 +1,7 @@
 Gosu SDK for Android
 ========================
 
-FEATURES *version: 1.2.6*
+FEATURES *version: 1.2.9*
 --------
 * Authenticate
 * Billing
