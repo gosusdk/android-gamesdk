@@ -63,9 +63,14 @@
         <meta-data
             android:name="com.facebook.sdk.ClientToken"
             android:value="@string/facebook_client_token" />
-        <provider android:authorities="com.facebook.app.FacebookContentProvider116350609033094"
-            android:name="com.facebook.FacebookContentProvider"
-            android:exported="true"/>
+
+        <service
+            android:name="com.gosu.gstracking.GFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
     <uses-feature android:glEsVersion="0x00020000" />

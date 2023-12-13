@@ -22,6 +22,7 @@ import com.android.billingclient.api.SkuDetails;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.share.Sharer;
+import com.gosu.gstracking.GTrackingManger;
 import com.gosu.sdk.DialogLoginID;
 import com.gosu.sdk.FloatingView;
 import com.gosu.sdk.Gosu;
@@ -343,6 +344,35 @@ public class MainActivity extends AppCompatActivity {
                 callIAP(3);
             }
         });
+    }
+
+    protected void callTrackingExample()
+    {
+        GTrackingManger.getInstance().trackingEvent("level_20");
+        GTrackingManger.getInstance().trackingStartTrial();
+        GTrackingManger.getInstance().trackingTutorialCompleted();
+        GTrackingManger.getInstance().doneNRU(
+                "server_id",
+                "role_id",
+                "Role Name"
+        );
+        String abc = null;
+        GTrackingManger.getInstance().doneNRU(
+                abc,
+                abc,
+                abc
+        );
+        try {
+            String value = "{\"customer_id\":\"12345\"}";
+            JSONObject jsonObject = new JSONObject(value);
+        } catch (Exception e) {
+
+        }
+
+        /* custom event */
+        GTrackingManger.getInstance().trackingEvent("level_20", abc);
+        GTrackingManger.getInstance().trackingEvent("level_20", "{\"test\":\"abc\"}");
+        GTrackingManger.getInstance().trackingEvent("level_20", "{\"customer_id\":\"12345\"}");
     }
 
     private void getFirebaseToken() {
