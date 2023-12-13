@@ -51,7 +51,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:23.2.1'
     implementation 'com.google.firebase:firebase-analytics'
     //airbridge
-    implementation "io.airbridge:sdk-android:2.22.0"
+    implementation "io.airbridge:sdk-android:2.22.2"
 }
 ```	
 **-Move config file (google-services.json) into the module (app-level) root directory of your app.**
@@ -98,6 +98,14 @@ app/
 <provider android:authorities="com.facebook.app.FacebookContentProvider116350609033094"
     android:name="com.facebook.FacebookContentProvider"
     android:exported="true"/>
+
+<service
+    android:name="com.gosu.gstracking.GFirebaseMessagingService"
+    android:exported="false">
+    <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+    </intent-filter>
+</service>
 
 <!-- ======= AF Tracking ======= -->
 <receiver
