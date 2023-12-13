@@ -1,11 +1,13 @@
 Gosu SDK for Android
 ========================
 
-FEATURES *version: 1.2.6*
+FEATURES *version: 1.2.9*
 --------
 * Authenticate
 * Billing
 * Tracking
+
+**Download the official version: [click here](https://github.com/gosusdk/android-gamesdk/releases)**
 
 INSTALLATION
 ------------
@@ -49,7 +51,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging:23.2.1'
     implementation 'com.google.firebase:firebase-analytics'
     //airbridge
-    implementation "io.airbridge:sdk-android:2.22.0"
+    implementation "io.airbridge:sdk-android:2.22.2"
 }
 ```	
 **-Move config file (google-services.json) into the module (app-level) root directory of your app.**
@@ -58,7 +60,7 @@ app/
   google-services.json
 ```
 
-**- Add gosu_service.json file to folder main/assets**
+**- Add gosu-service.json file to folder main/assets**
 ```json
 {
   "client_id": "",
@@ -97,6 +99,14 @@ app/
     android:name="com.facebook.FacebookContentProvider"
     android:exported="true"/>
 
+<service
+    android:name="com.gosu.gstracking.GFirebaseMessagingService"
+    android:exported="false">
+    <intent-filter>
+        <action android:name="com.google.firebase.MESSAGING_EVENT" />
+    </intent-filter>
+</service>
+
 <!-- ======= AF Tracking ======= -->
 <receiver
     android:name="com.appsflyer.MultipleInstallBroadcastReceiver"
@@ -116,16 +126,27 @@ app/
 ```
 USAGE GOSU LOGIN SDK
 --------------------
-1. Initialize configuration for NemoSDK
+1. Initialize configuration for GosuSDK
 ---
 ```java
-  protected void onCreate(Bundle savedInstanceState)()
-  {
-    // ...
-    //Initialize SDK
-    Gosu.getSharedInstance().initialize( this);
-    Gosu.getSharedInstance().showFloating18Plus(this); //optional
-  }
+    protected void onCreate(Bundle savedInstanceState)()
+    {
+        // ...
+        //Initialize SDK
+        Gosu.getSharedInstance().initialize( this);
+        Gosu.getSharedInstance().showFloating18Plus(this); //optional
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == GosuSDKConstant.IAP_RQ_CODE) {
+            super.onActivityResult(requestCode, resultCode, data);
+        } else if(requestCode == GosuSDKConstant.FLOATING_RQ_CODE){
+            Gosu.getSharedInstance().checkResultForFloatingView(requestCode, resultCode, data);
+        } else {
+            Gosu.getSharedInstance().onActivityResult(requestCode, resultCode, data);
+            super.onActivityResult(requestCode, resultCode, data);
+        }
+    }
 ```
 **NOTE**
 * Login with Google: You send SHA-1 us [click here](https://developers.google.com/android/guides/client-auth)
@@ -198,11 +219,20 @@ public void call_billing()
 }
 ```
 
-USAGE NEMO TRACKING SDK
+USAGE GOSU TRACKING SDK
 --------------------
 
 ```java
-//Initialize SDK 
+GTrackingManger.getInstance().trackingStartTrial();
+GTrackingManger.getInstance().trackingTutorialCompleted();
+GTrackingManger.getInstance().doneNRU(
+        "server_id",
+        "role_id",
+        "Role Name"
+);
+/* custom event */
+GTrackingManger.getInstance().trackingEvent("level_20");
+GTrackingManger.getInstance().trackingEvent("level_20", "{\"customer_id\":\"1234\"}");
 /* example: 
 jsonContent = {"event": "event_name", "params": {"key": "value", "key2": "value2"} }
 */
