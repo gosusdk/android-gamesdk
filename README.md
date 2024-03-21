@@ -1,7 +1,7 @@
 Gosu SDK for Android
 ========================
 
-FEATURES *version: 1.2.9*
+FEATURES *version: 1.2.10* (2024-03-21)
 --------
 * Authenticate
 * Billing
@@ -135,6 +135,7 @@ USAGE GOSU LOGIN SDK
         //Initialize SDK
         Gosu.getSharedInstance().initialize( this);
         Gosu.getSharedInstance().showFloating18Plus(this); //optional
+        Gosu.getSharedInstance().getVersion(); //GET SDK Version
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
